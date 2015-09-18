@@ -3,6 +3,8 @@ Overview
 
 This sample Xcode project demonstrates how to build Go code for OS X / iPhone / iOS Simulator executables, as well as calling to and from Go.
 
+*This project installs its own local version of Go 1.5 and does not use or modify in any way any prior Go installation.*
+
 Getting Started
 ===============
 
@@ -10,7 +12,7 @@ Getting Started
 2. Run `./bootstrap.sh`
 3. Open the Xcode project
 
-If you need to access the Go environment from Terminal, `cd` into the directory then run `source env.sh`. This will define `GOROOT`, `GOPATH`, etc...
+If you need to access the local Go environment from Terminal, `cd` into the directory then run `source env.sh`. This will define `GOROOT`, `GOPATH`, etc...
 
 Limitations
 ===========
