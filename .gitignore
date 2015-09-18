@@ -3,5 +3,5 @@ xcuserdata
 project.xcworkspace
 
 *.tar.gz
-/go-*
+/go-1.*
 /build
