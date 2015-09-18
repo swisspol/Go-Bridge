@@ -13,8 +13,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E247DF441819DF8D002CD010 /* Tests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Tests; sourceTree = BUILT_PRODUCTS_DIR; };
-		E29962A01BA73F2600426E41 /* Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E247DF441819DF8D002CD010 /* Go-Bridge */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Go-Bridge"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E29962A01BA73F2600426E41 /* Go-Bridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Go-Bridge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E29962C11BA7404F00426E41 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E29962C41BA7404F00426E41 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		E2D0E8E01BAC8F0C00892A8D /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -53,8 +53,8 @@
 		E247DF451819DF8D002CD010 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E247DF441819DF8D002CD010 /* Tests */,
-				E29962A01BA73F2600426E41 /* Tests.app */,
+				E247DF441819DF8D002CD010 /* Go-Bridge */,
+				E29962A01BA73F2600426E41 /* Go-Bridge.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,7 +93,7 @@
 			);
 			name = Mac;
 			productName = TEST;
-			productReference = E247DF441819DF8D002CD010 /* Tests */;
+			productReference = E247DF441819DF8D002CD010 /* Go-Bridge */;
 			productType = "com.apple.product-type.tool";
 		};
 		E299629F1BA73F2600426E41 /* iPhone */ = {
@@ -110,7 +110,7 @@
 			);
 			name = iPhone;
 			productName = iPhone;
-			productReference = E29962A01BA73F2600426E41 /* Tests.app */;
+			productReference = E29962A01BA73F2600426E41 /* Go-Bridge.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -127,7 +127,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E247DF3F1819DF8D002CD010 /* Build configuration list for PBXProject "Tests" */;
+			buildConfigurationList = E247DF3F1819DF8D002CD010 /* Build configuration list for PBXProject "Go-Bridge" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -231,7 +231,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				PRODUCT_NAME = Tests;
+				PRODUCT_NAME = "Go-Bridge";
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -241,7 +241,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				PRODUCT_NAME = Tests;
+				PRODUCT_NAME = "Go-Bridge";
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -255,7 +255,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = Tests;
+				PRODUCT_NAME = "Go-Bridge";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -270,7 +270,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = Tests;
+				PRODUCT_NAME = "Go-Bridge";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -279,7 +279,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E247DF3F1819DF8D002CD010 /* Build configuration list for PBXProject "Tests" */ = {
+		E247DF3F1819DF8D002CD010 /* Build configuration list for PBXProject "Go-Bridge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E247DF4B1819DF8D002CD010 /* Debug */,
