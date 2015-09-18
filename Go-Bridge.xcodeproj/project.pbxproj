@@ -7,17 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E29962C81BA7404F00426E41 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = E29962C41BA7404F00426E41 /* main.c */; settings = {ASSET_TAGS = (); }; };
-		E29962C91BA7404F00426E41 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = E29962C41BA7404F00426E41 /* main.c */; settings = {ASSET_TAGS = (); }; };
-		E2D0E8E11BAC8F0C00892A8D /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2D0E8E01BAC8F0C00892A8D /* CoreFoundation.framework */; };
+		E29962C81BA7404F00426E41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E29962C41BA7404F00426E41 /* main.m */; settings = {ASSET_TAGS = (); }; };
+		E29962C91BA7404F00426E41 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E29962C41BA7404F00426E41 /* main.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E247DF441819DF8D002CD010 /* Go-Bridge */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Go-Bridge"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E29962A01BA73F2600426E41 /* Go-Bridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Go-Bridge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E29962C11BA7404F00426E41 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E29962C41BA7404F00426E41 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		E2D0E8E01BAC8F0C00892A8D /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		E29962C41BA7404F00426E41 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E2D0E8EA1BAC9E3A00892A8D /* main.go */ = {isa = PBXFileReference; lastKnownFileType = text; name = main.go; path = go/main.go; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -33,7 +31,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2D0E8E11BAC8F0C00892A8D /* CoreFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,7 +42,6 @@
 			children = (
 				E2D0E8EA1BAC9E3A00892A8D /* main.go */,
 				E247DF531819E4E3002CD010 /* Source */,
-				E2D0E8E21BAC8F3000892A8D /* Frameworks and Libraries */,
 				E247DF451819DF8D002CD010 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,17 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				E29962C11BA7404F00426E41 /* Info.plist */,
-				E29962C41BA7404F00426E41 /* main.c */,
+				E29962C41BA7404F00426E41 /* main.m */,
 			);
 			name = Source;
-			sourceTree = "<group>";
-		};
-		E2D0E8E21BAC8F3000892A8D /* Frameworks and Libraries */ = {
-			isa = PBXGroup;
-			children = (
-				E2D0E8E01BAC8F0C00892A8D /* CoreFoundation.framework */,
-			);
-			name = "Frameworks and Libraries";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,7 +178,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E29962C81BA7404F00426E41 /* main.c in Sources */,
+				E29962C81BA7404F00426E41 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,7 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E29962C91BA7404F00426E41 /* main.c in Sources */,
+				E29962C91BA7404F00426E41 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +197,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				HEADER_SEARCH_PATHS = "build/$(PLATFORM_NAME)";
 				ONLY_ACTIVE_ARCH = YES;
@@ -221,6 +211,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				HEADER_SEARCH_PATHS = "build/$(PLATFORM_NAME)";
 				OTHER_LDFLAGS = "build/$(PLATFORM_NAME)/main.a";
 				WARNING_CFLAGS = "-Wall";

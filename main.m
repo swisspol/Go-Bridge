@@ -1,6 +1,6 @@
-#include <unistd.h>
+#import <Foundation/Foundation.h>
 
-#include <main.h>
+#import <main.h>
 
 int main(int argc, const char* argv[]) {
   GoString name = {"Jack", 4};
