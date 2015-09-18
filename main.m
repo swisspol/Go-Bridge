@@ -1,11 +1,31 @@
 #import <Foundation/Foundation.h>
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunused-function"
 #import <main.h>
+#pragma clang diagnostic pop
+
+// This C function is called from Go
+static int Callback() {
+  return 42;
+}
+
+static NSString* _NSStringFromGoString(GoString string) {
+  return [[NSString alloc] initWithBytes:string.p length:string.n encoding:NSUTF8StringEncoding];
+}
+
+// The returned GoString will be valid for the duration of the current autorelease pool
+static GoString _GoStringFromNSString(NSString* string) {
+  NSData* data = [string dataUsingEncoding:NSUTF8StringEncoding];
+  GoString result = {(char*)data.bytes, data.length};
+  return result;
+}
 
 int main(int argc, const char* argv[]) {
-  GoString name = {"Jack", 4};
-  GoString string = Test(name);
-  write(STDOUT_FILENO, string.p, string.n);
-  write(STDOUT_FILENO, "\n", 1);
+  @autoreleasepool {
+    GoString param = _GoStringFromNSString(@"Result");
+    GoString result = Bridge(param, Callback);
+    NSLog(@"%@", _NSStringFromGoString(result));
+  }
   return 0;
 }
