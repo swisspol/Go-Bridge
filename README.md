@@ -1,7 +1,7 @@
 Overview
 ========
 
-This sample Xcode project demonstrates how to build and call Go code from OS X / iPhone / iOS Simulator executables.
+This sample Xcode project demonstrates how to build Go code for OS X / iPhone / iOS Simulator executables, as well as calling to and from Go.
 
 Getting Started
 ===============
