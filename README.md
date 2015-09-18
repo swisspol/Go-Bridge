@@ -18,6 +18,7 @@ Limitations
 ===========
 
 1) Go code is built with absolute addressing which triggers a warning when linking the executable
+
 https://github.com/golang/go/issues/12681
 
 ```
@@ -25,9 +26,11 @@ https://github.com/golang/go/issues/12681
 ```
 
 2) Go code is not built with bitcode when building for iPhone
+
 https://github.com/golang/go/issues/12682
 
 3) Go code fails to build for iOS Simulator on i386 (the Xcode project is therefore configured to only use it in 64 bit mode)
+
 https://github.com/golang/go/issues/12683
 
 ```
