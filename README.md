@@ -1,7 +1,7 @@
 Overview
 ========
 
-This sample Xcode project demonstrates how to build and call Go code from OS X / iPhone / Simulator executables.
+This sample Xcode project demonstrates how to build and call Go code from OS X / iPhone / iOS Simulator executables.
 
 Getting Started
 ===============
@@ -12,8 +12,15 @@ Getting Started
 Limitations
 ===========
 
-- Building Go code for iPhone does not include bitcode
-- Building Go code for iOS Simulator on i386 does not work (see below)
+1) Go code is built with absolute addressing which triggers a warning when linking the executable
+
+```
+(null): PIE disabled. Absolute addressing (perhaps -mdynamic-no-pic) not allowed in code signed PIE, but used in __cgoexp_45a75e65c81e_Test from build/iphoneos/main.a(go.o). To fix this warning, don't compile with -mdynamic-no-pic or link with -Wl,-no_pie
+```
+
+2) Go code is not built with bitcode when building for iPhone
+
+3) Go code fails to build for iOS Simulator on i386
 
 ```
 /Users/pol/Downloads/Tests/go-1.5.1/pkg/tool/darwin_amd64/link -o $WORK/command-line-arguments/_obj/exe/a.out.a -L $WORK -L /Users/pol/Downloads/Tests/go-1.5.1/pkg_cross/iPhoneSimulator_i386 -extld=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -buildmode=c-archive -buildid=a5117489b1092eae5e08f28729578dbb1167953c $WORK/command-line-arguments.a
