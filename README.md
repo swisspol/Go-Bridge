@@ -8,6 +8,9 @@ Getting Started
 
 1. Clone repo and `cd` into the directory
 2. Run `./bootstrap.sh`
+3. Open the Xcode project
+
+If you need to access the Go environment from Terminal, `cd` into the directory then run `source env.sh`. This will define `GOROOT`, `GOPATH`, etc...
 
 Limitations
 ===========
