@@ -3,6 +3,7 @@
 source "env.sh"
 
 BUILD_DIR="`pwd`/build/$PLATFORM_NAME"
+rm -rf "$BUILD_DIR"
 mkdir -p "$BUILD_DIR"
 
 cd "go"
