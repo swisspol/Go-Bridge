@@ -1,6 +1,7 @@
 #!/bin/sh -ex
 
 GO_VERSION="1.5.1"
+ANDROID_NDK_VERSION="r10e"
 
 OSX_MIN_VERSION="10.8"
 IOS_MIN_VERSION="8.0"
@@ -16,6 +17,7 @@ IPHONEOS_SDK_PATH="$DEVELOPER_DIR/Platforms/iPhoneOS.platform/Developer/SDKs/iPh
 IPHONESIMULATOR_SDK_VERSION=`xcodebuild -version -sdk | grep -A 1 '^iPhoneSimulator' | tail -n 1 |  awk '{ print $2 }'`
 IPHONESIMULATOR_SDK_PATH="$DEVELOPER_DIR/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator$IPHONESIMULATOR_SDK_VERSION.sdk"
 
+ANDROID_NDK_PATH="`pwd`/android_ndk"
 
 export GOROOT="`pwd`/go-$GO_VERSION"
 export GOPATH="`pwd`/go"

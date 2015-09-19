@@ -69,4 +69,16 @@ then
   LIPO=`xcrun -find lipo`
   $LIPO -create "$BUILD_DIR/main_32.a" "$BUILD_DIR/main_64.a" -output "$BUILD_DIR/main.a"
   rm "$BUILD_DIR/main_32.a" "$BUILD_DIR/main_64.a"
+elif [ "$PLATFORM_NAME" == "android" ]
+then
+  (
+    export CC="$ANDROID_NDK_PATH/arm/bin/arm-linux-androideabi-gcc"
+    export CXX="$ANDROID_NDK_PATH/arm/bin/arm-linux-androideabi-g++"
+    
+    export CGO_ENABLED=1
+    export GOOS=android
+    export GOARCH=arm
+    export GOARM=7
+    go build -pkgdir="$GOROOT/pkg_cross/Android_armv7" -tags="" -v -x -buildmode=c-shared -o "$BUILD_DIR/main.so"
+  )
 fi

@@ -4,4 +4,5 @@ project.xcworkspace
 
 *.tar.gz
 /go-1.*
+/android_ndk
 /build
