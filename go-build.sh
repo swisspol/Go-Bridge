@@ -23,14 +23,6 @@ then
   )
 elif [ "$PLATFORM_NAME" == "iphonesimulator" ]
 then
-  # (
-  #   export CGO_ENABLED=1
-  #   export GOOS=darwin
-  #   export GOARCH=386
-  #   export CGO_CFLAGS="-isysroot $IPHONESIMULATOR_SDK_PATH -arch i386 -mios-simulator-version-min=$IOS_MIN_VERSION"
-  #   export CGO_LDFLAGS="-isysroot $IPHONESIMULATOR_SDK_PATH -arch i386 -mios-simulator-version-min=$IOS_MIN_VERSION"
-  #   go build -pkgdir="$GOROOT/pkg_cross/iPhoneSimulator_i386" -tags=ios -v -x -buildmode=c-archive -o "$BUILD_DIR/main_32.a"
-  # )
   (
     export CC=`xcrun -find clang`
     export CXX=`xcrun -find clang++`
@@ -43,14 +35,9 @@ then
     go build -pkgdir="$GOROOT/pkg_cross/iPhoneSimulator_x86_64" -tags=ios -v -x -buildmode=c-archive -o "$BUILD_DIR/main_64.a"
   )
   
-  # TODO: Building for iOS Simulator on i386 does not work
+  # TODO: Building for iOS Simulator on i386 does not work (https://github.com/golang/go/issues/12683)
   mv -f "$BUILD_DIR/main_64.h" "$BUILD_DIR/main.h"
   mv -f "$BUILD_DIR/main_64.a" "$BUILD_DIR/main.a"
-  
-  # printf "#ifdef __LP64__\n#include \"main_64.h\"\n#else\n#include \"main_32.h\"\n#endif\n" > "$BUILD_DIR/main.h"
-  #
-  # $LIPO -create "$BUILD_DIR/main_32.a" "$BUILD_DIR/main_64.a" -output "$BUILD_DIR/main.a"
-  # rm "$BUILD_DIR/main_32.a" "$BUILD_DIR/main_64.a"
 elif [ "$PLATFORM_NAME" == "iphoneos" ]
 then
   (
@@ -78,7 +65,6 @@ then
   )
   
   printf "#ifdef __LP64__\n#include \"main_64.h\"\n#else\n#include \"main_32.h\"\n#endif\n" > "$BUILD_DIR/main.h"
-  
 
   LIPO=`xcrun -find lipo`
   $LIPO -create "$BUILD_DIR/main_32.a" "$BUILD_DIR/main_64.a" -output "$BUILD_DIR/main.a"
