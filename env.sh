@@ -16,9 +16,6 @@ IPHONEOS_SDK_PATH="$DEVELOPER_DIR/Platforms/iPhoneOS.platform/Developer/SDKs/iPh
 IPHONESIMULATOR_SDK_VERSION=`xcodebuild -version -sdk | grep -A 1 '^iPhoneSimulator' | tail -n 1 |  awk '{ print $2 }'`
 IPHONESIMULATOR_SDK_PATH="$DEVELOPER_DIR/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator$IPHONESIMULATOR_SDK_VERSION.sdk"
 
-export CC=`xcrun -find clang`
-export CXX=`xcrun -find clang++`
-export LIPO=`xcrun -find lipo`
 
 export GOROOT="`pwd`/go-$GO_VERSION"
 export GOPATH="`pwd`/go"

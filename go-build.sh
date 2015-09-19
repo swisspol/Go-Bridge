@@ -10,6 +10,9 @@ cd "go"
 if [ "$PLATFORM_NAME" == "macosx" ]
 then
   (
+    export CC=`xcrun -find clang`
+    export CXX=`xcrun -find clang++`
+    
     export CGO_ENABLED=1
     export GOOS=darwin
     export GOARCH=amd64
@@ -28,6 +31,9 @@ then
   #   go build -pkgdir="$GOROOT/pkg_cross/iPhoneSimulator_i386" -tags=ios -v -x -buildmode=c-archive -o "$BUILD_DIR/main_32.a"
   # )
   (
+    export CC=`xcrun -find clang`
+    export CXX=`xcrun -find clang++`
+    
     export CGO_ENABLED=1
     export GOOS=darwin
     export GOARCH=amd64
@@ -47,6 +53,9 @@ then
 elif [ "$PLATFORM_NAME" == "iphoneos" ]
 then
   (
+    export CC=`xcrun -find clang`
+    export CXX=`xcrun -find clang++`
+    
     export CGO_ENABLED=1
     export GOOS=darwin
     export GOARCH=arm
@@ -56,6 +65,9 @@ then
     go build -pkgdir="$GOROOT/pkg_cross/iPhoneOS_armv7" -tags=ios -v -x -buildmode=c-archive -o "$BUILD_DIR/main_32.a"
   )
   (
+    export CC=`xcrun -find clang`
+    export CXX=`xcrun -find clang++`
+    
     export CGO_ENABLED=1
     export GOOS=darwin
     export GOARCH=arm64
@@ -66,6 +78,8 @@ then
   
   printf "#ifdef __LP64__\n#include \"main_64.h\"\n#else\n#include \"main_32.h\"\n#endif\n" > "$BUILD_DIR/main.h"
   
+
+  LIPO=`xcrun -find lipo`
   $LIPO -create "$BUILD_DIR/main_32.a" "$BUILD_DIR/main_64.a" -output "$BUILD_DIR/main.a"
   rm "$BUILD_DIR/main_32.a" "$BUILD_DIR/main_64.a"
 fi

@@ -16,6 +16,9 @@ mv "go" "$GOROOT"
 
 # Build for MacOSX / x86_64
 (
+  export CC=`xcrun -find clang`
+  export CXX=`xcrun -find clang++`
+
   export CGO_ENABLED=1
   export GOOS=darwin
   export GOARCH=amd64
@@ -26,6 +29,9 @@ mv "go" "$GOROOT"
 
 # Build for iPhoneSimulator / i386
 (
+  export CC=`xcrun -find clang`
+  export CXX=`xcrun -find clang++`
+
   export CGO_ENABLED=1
   export GOOS=darwin
   export GOARCH=386
@@ -36,6 +42,9 @@ mv "go" "$GOROOT"
 
 # Build for iPhoneSimulator / x86_64
 (
+  export CC=`xcrun -find clang`
+  export CXX=`xcrun -find clang++`
+
   export CGO_ENABLED=1
   export GOOS=darwin
   export GOARCH=amd64
@@ -46,6 +55,9 @@ mv "go" "$GOROOT"
 
 # Build for iPhoneOS / armv7
 (
+  export CC=`xcrun -find clang`
+  export CXX=`xcrun -find clang++`
+
   export CGO_ENABLED=1
   export GOOS=darwin
   export GOARCH=arm
@@ -57,6 +69,9 @@ mv "go" "$GOROOT"
 
 # Build for iPhoneOS / arm64
 (
+  export CC=`xcrun -find clang`
+  export CXX=`xcrun -find clang++`
+
   export CGO_ENABLED=1
   export GOOS=darwin
   export GOARCH=arm64
