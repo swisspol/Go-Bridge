@@ -1,9 +1,6 @@
 #import <Foundation/Foundation.h>
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wunused-function"
 #import <main.h>
-#pragma clang diagnostic pop
 
 // This C function is called from Go
 static int Callback() {

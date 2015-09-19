@@ -3,7 +3,7 @@ package main
 /*
 typedef int (*intFunc) ();
 
-static int bridge_int_func(intFunc f) {
+static inline int bridge_int_func(intFunc f) {
   return f();
 }
 */
