@@ -17,6 +17,8 @@
 		E29962C11BA7404F00426E41 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E29962C41BA7404F00426E41 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E2D0E8EA1BAC9E3A00892A8D /* main.go */ = {isa = PBXFileReference; lastKnownFileType = text; name = main.go; path = go/main.go; sourceTree = "<group>"; };
+		E2D0E8F51BAD1C0B00892A8D /* common.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = common.c; path = go/common.c; sourceTree = "<group>"; };
+		E2D0E8F61BAD1C0B00892A8D /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = common.h; path = go/common.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +42,8 @@
 		E247DF3B1819DF8D002CD010 = {
 			isa = PBXGroup;
 			children = (
+				E2D0E8F61BAD1C0B00892A8D /* common.h */,
+				E2D0E8F51BAD1C0B00892A8D /* common.c */,
 				E2D0E8EA1BAC9E3A00892A8D /* main.go */,
 				E247DF531819E4E3002CD010 /* Source */,
 				E247DF451819DF8D002CD010 /* Products */,

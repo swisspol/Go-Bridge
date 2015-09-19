@@ -1,6 +1,8 @@
 package main
 
 /*
+#include "common.h"
+
 typedef int (*intFunc) ();
 
 static inline int bridge_int_func(intFunc f) {
@@ -18,7 +20,8 @@ import "github.com/satori/go.uuid"
 // This Go function is called from C
 func Bridge(param string, callback unsafe.Pointer) string {
 	uuid := uuid.NewV4()
-	return fmt.Sprintf("[%s] %s = %d", uuid.String(), param, C.bridge_int_func(C.intFunc(callback)))
+  cs := C.CString("Hello World!")
+	return fmt.Sprintf("[%s] %s = %d (%d)", uuid.String(), param, C.bridge_int_func(C.intFunc(callback)), C.CBridge(cs))
 }
 
 // Not used but must be present
